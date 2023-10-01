@@ -32,6 +32,8 @@ jobs:
       run: |
         cd ml-guide
         HOST=${{ secrets.HOST }}
+        USERNAME=${{ secrets.USERNAME }}
+        PASSWORD=${{ secrets.PASSWORD }}
         sudo apt-get update -qq && sudo apt-get install -y -qq lftp
         lftp -c "set ftp:ssl-allow no; open -u $USERNAME,$PASSWORD $HOST; mirror -Rev site/ ./public_html  --ignore-time --parallel=1 --exclude-glob .git* --exclude .git/"
 
