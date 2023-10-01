@@ -30,7 +30,6 @@ jobs:
         pipenv run mkdocs build
     - name: Publish
       run: |
-        sudo apt-get update -qq && apt-get install -y -qq lftp
         lftp -c "set ftp:ssl-allow no; open -u $USERNAME,$PASSWORD $HOST; mirror -Rev site/ ./public_html  --ignore-time --parallel=1 --exclude-glob .git* --exclude .git/"
 
         
