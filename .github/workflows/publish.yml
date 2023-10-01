@@ -25,4 +25,7 @@ jobs:
         pip install pipenv
         pipenv install
     - name: Build
-      run: mkdocs build
+      run: |
+        cd ml-guide
+        pipenv shell
+        mkdocs build
