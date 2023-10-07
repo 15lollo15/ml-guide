@@ -1,8 +1,10 @@
-site_name: My Docs
+site_name: ML Guide
 repo_url: https://github.com/15lollo15/ml-guide
 theme:
   name: material
   language: it
+  favicon: images/favicon.png
+  logo: images/favicon.png
   palette:
 
     # Palette toggle for automatic mode
@@ -48,6 +50,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - tables
+  - def_list
 
 
 plugins:
